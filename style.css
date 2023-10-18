@@ -1,0 +1,114 @@
+* {
+    align-items: center;
+}
+
+
+body {
+    vertical-align: middle;
+}
+
+.calculator-box {
+    height: 50vw;
+    width: 40vw;
+    background-color: #333366;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+.topside {
+    height: 15vw;
+    width: 35vw;
+    background-color: #6666CC;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.topside__ouput-screen {
+    height: 8vw;
+    width: 30vw;
+    background-color: #9999CC;
+    border: 2px solid #333366;
+}
+
+.topside__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topside__off-btn {
+    height: 4vw;
+    width: 8vw;
+    background-color: #CCCCFF;
+}
+
+.topside__on-btn {
+    height: 4vw;
+    width: 8vw;
+    background-color: #CCCCFF;
+
+ 
+}
+
+.topside__delete-btn {
+    height: 4vw;
+    width: 11vw;
+    background-color: #CCCCFF;
+
+}
+
+.bottomside {
+    height: 30vw;
+    width: 35vw;
+    background-color: #6666CC;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.bottomside__number-btns {
+    display: flex;
+    flex-wrap: wrap;
+    height: 25vw;
+    width: 30vw;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 1vw;
+
+}
+
+.bottomside__number-btn {
+    height: 7vw;
+    width: 7vw;
+    font-size: 3.5vw;
+    background-color: #CCCCFF;
+    padding: 1vw;
+
+}
+
+.bottomside__operator-btns {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    justify-content: space-evenly;
+    padding-top: 1vw;
+
+}
+
+.bottomside__operator-btn {
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    border: 1px solid #333366;
+    font-size: 3.5vw;
+    background-color: #CCCCFF;
+}
+

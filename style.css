@@ -35,6 +35,7 @@ body {
     width: 30vw;
     background-color: #9999CC;
     border: 2px solid #333366;
+    font-size: 4 vw;
 }
 
 .topside__buttons {
@@ -112,3 +113,9 @@ body {
     background-color: #CCCCFF;
 }
 
+.number {
+    font-size: 5vw;
+    text-align: end;
+    padding: 0vw 0vw 0 0;
+    color: #b5f73a;
+}

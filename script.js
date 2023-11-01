@@ -4,54 +4,57 @@ const actionButtons = document.querySelectorAll('.bottomside__operator-btn')
 const deleteButton = document.querySelector('.topside__delete-btn')
 const equals = document.getElementById('equals')
 
-let number1
-let number2
+let prev = ''
+let current = ''
+let operation = undefined
+let result = null
 
- function clickValue (e) {
-        number1 = e.target.textContent
-        outputScreen.textContent += number1
-        outputScreen.classList.add('number')
-        console.log(number1)
-    }
+numberButtons.forEach(button => button.addEventListener ('click', function(e) {
+    let firstOperand = e.target.textContent
+    current = firstOperand
+    updateDisplay()
+}))
 
 
 actionButtons.forEach(button => {
-    button.addEventListener ('click', function (e) {
-        outputScreen.innerHTML = ''
+    button.addEventListener('click', function(e) {
+    prev = Number (current)
+    current = ''
+    operation = e.target.textContent
 
-        let action = e.target.textContent
-        //  switch (action) {
-        //     case '*':
-        //         outputScreen.textContent += number * number
-        //         break
-        //     case '/':
-        //         console.log ('/')
-        //         break
-        //     case '-':
-        //         console.log ('-')
-        //         break
-        //     case '+':
-        //         console.log ('+')
-        //         break
-        //  }
-
+    updateDisplay()
+    numberButtons.forEach(button => button.addEventListener ('click', function(i) {
+        let secondOperand = i.target.textContent
+        current = Number (secondOperand)
     })
+    )
+    
+})
 })
 
-function ClickValue2 (e2) {
-    number2 = e2.targer.textContent
-    console.log(number2)
+equals.addEventListener('click', () => {
+    result = calculate({prev, current, operation})
+    updateDisplay()
+    clear()
+})
+
+function updateDisplay() {
+    outputScreen.classList.add('number')
+    if(result === null) {
+        outputScreen.textContent = current
+    } else if(result !== null) {
+        outputScreen.textContent = result
+    }
 }
 
-function toCount () {
-    let result = number1 * number2
-    console.log (result)
+function clear() {
+    prev = ''
+    current = ''
+    operation = undefined
+    result = null
 }
 
 
 deleteButton.addEventListener ('click', () => {
         outputScreen.innerHTML = ''
 })
-
-numberButtons.forEach(button => button.addEventListener ('click', clickValue))
-equals.addEventListener ('clck', toCount)
